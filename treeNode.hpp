@@ -17,8 +17,8 @@ class TreeList;
 class TreeNode {
 private:
 	TreeNode* parent;
-	std::string data; //data can be of any type
-	int isFolder;
+	std::string data; //cambio de int a string para el ejercicio
+	int isFolder; // lo agregamos para indicar si es carpeta o no
 	TreeList* children;
 	
 public:
@@ -28,12 +28,12 @@ public:
 	void setParent(TreeNode* node);
 	void setData(std::string val);
 	void setChildren(TreeList* list);
-	void setIsFolder(int val);
+	void setIsFolder(int val); // poner si es o no carpeta
 
 
 	TreeNode* getParent();
 	std::string getData();
-	int getIsFolder();
+	int getIsFolder(); //ver si es carpeta
 	TreeList* getChildren();
 	virtual ~TreeNode();
 };

@@ -40,7 +40,7 @@ void Tree::insert(std::string val, std::string val_parent, int _isFolder){
 	}
 }
 
-
+//baja a los hijos, una y otra vez, la hizo el profe
 TreeNode* Tree::find_rec(std::string val, TreeNode* node){
 	TreeNode* ans = nullptr;
 	if (node != nullptr){
@@ -59,19 +59,18 @@ TreeNode* Tree::find_rec(std::string val, TreeNode* node){
 	return ans;
 }
 
-// Encontrar un nodo en todo el arbol
 TreeNode* Tree::find(std::string val){
 	TreeNode* ans = find_rec(val, root);
 	return ans;
 }
 
-// Encontrar un nodo segun su valor a partir de un nodo
+// Encontrar un nodo entre los desendientes a partir de un nodo, find
 TreeNode* Tree::find_curr(std::string val, TreeNode* node){
 	TreeNode* ans = find_rec(val, node);
 	return ans;
 }
 
-// Encontrar un nodo segun su nombre y su padre
+// Encontrar un nodo entre los hijos de un padre
 TreeNode* Tree::find_child(std::string val, TreeNode* node){
 	TreeNode* ans = nullptr;
 	if (node != nullptr){
@@ -106,7 +105,7 @@ std::string Tree::path(std::string val){
 }
 
 
-// Funcion que elimina un nodo y todos sus 
+// Funcion que elimina un nodo y todos sus descendientes
 void Tree::remove(TreeNode* node) {
 	if (node != nullptr) {
 		TreeList* children = node->getChildren();
@@ -143,7 +142,7 @@ void Tree::print(TreeNode* node){
 	}
 }
 
-
+// imprimen el arbol, la creo el profe, funcion tree
 void Tree::traverse_rec(TreeNode* node, int level){
 	if (node != nullptr){
 		std::cout << std::string(level * 3, '-');

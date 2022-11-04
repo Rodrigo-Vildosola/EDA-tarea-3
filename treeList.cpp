@@ -13,6 +13,7 @@ TreeList::TreeList(): head(nullptr) {
 	// TODO Auto-generated constructor stub
 }
 
+//agrega un hijo a la nueva lista, la hizo el profe
 void TreeList::insertFirst(TreeNode* treeNode, TreeNode* parent, int _isFolder){
 	TreeListNode* node = new TreeListNode(treeNode);
 	(node->getData())->setIsFolder(_isFolder);
