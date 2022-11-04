@@ -140,15 +140,15 @@ int main(int nargs, char** vargs){
             if (args.size() <= 2) {
                 cout << "No se ha ingresado un nombre de archivo" << endl;
             }
-            else if (tree.find(args[2]) != nullptr) {
-                cout << "Ya existe un archivo con ese nombre" << endl;
-            }
+
             else {
                 vector<string> dirs = split(args[1], '/');
                 string file_name = dirs[dirs.size() - 1];
                 TreeNode* node = tree.find(file_name);
-                if (node != nullptr) {
-                    tree.find_curr(args[2], node);
+                if (node != nullptr && tree.find_curr(args[2], node) != nullptr) {
+                    string path = tree.find_curr(args[2], node)->getData();
+                    cout << "Path: " << tree.path(path) << endl;
+
                 }
                 else {
                     cout << "No existe el archivo" << endl;

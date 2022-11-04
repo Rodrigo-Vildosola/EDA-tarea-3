@@ -85,6 +85,7 @@ TreeNode* Tree::find_child(std::string val, TreeNode* node){
 	return ans;
 }
 
+// Funcion para encontrar el camino desde la raiz de un nodo
 std::string Tree::path_rec(TreeNode* node, std::string path){
 	if (node != nullptr){
 		if (node->getParent() != nullptr){
@@ -96,6 +97,7 @@ std::string Tree::path_rec(TreeNode* node, std::string path){
 	return path;
 }
 
+// Funcion para encontrar el camino desde la raiz de un nodo
 std::string Tree::path(std::string val){
 	std::string path = "";
 	TreeNode* node = find(val);
@@ -104,6 +106,7 @@ std::string Tree::path(std::string val){
 }
 
 
+// Funcion que elimina un nodo y todos sus 
 void Tree::remove(TreeNode* node) {
 	if (node != nullptr) {
 		TreeList* children = node->getChildren();
@@ -120,6 +123,8 @@ void Tree::remove(TreeNode* node) {
 	}
 }
 
+
+// Funcion para imprimir los hijos de un nodo
 void Tree::print(TreeNode* node){
 	if (node != nullptr){
 		TreeList* childrenList = node->getChildren();
